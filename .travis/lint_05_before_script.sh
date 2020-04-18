@@ -6,4 +6,7 @@
 
 export LC_ALL=C
 
-git fetch --unshallow || true
+git fetch --unshallow
+     git config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"
+     git fetch origin
+     git checkout --track origin/master
