@@ -34,7 +34,7 @@ packages:
 - "python3"
 remotes:
 - "url": "https://github.com/Kopernikus001/encocoinplus.git"
-  "dir": "encocoinplus"
+  "dir": "epgc"
 files: []
 script: |
   set -e -o pipefail
