@@ -6,4 +6,8 @@
 
 export LC_ALL=C
 
-git fetch --unshallow
+git fetch --unshallow || true
+
+
+  if [ "$TRAVIS_BRANCH" == "master" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
+    echo 'Build and analyze master'
