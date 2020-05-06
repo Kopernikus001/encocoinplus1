@@ -39,10 +39,10 @@ stages:
   - lint
   - cmake
   - test
-addons:
-    apt:
-        packages:
-            - sshpass
+#addons:
+ #   apt:
+  #      packages:
+   #         - sshpass
 env:
   global:
     - MAKEJOBS=-j3
@@ -64,8 +64,8 @@ before_install:
   - set -o errexit; source .travis/test_03_before_install.sh
 install:
   - set -o errexit; source .travis/test_04_install.sh
-before_script:
-  - set -o errexit; source .travis/test_05_before_script.sh
+#before_script:
+#  - set -o errexit; source .travis/test_05_before_script.sh
 script:
   - export CONTINUE=1
   - if [ $SECONDS -gt 1200 ]; then export CONTINUE=0; fi  # Likely the depends build took very long
@@ -90,8 +90,8 @@ jobs:
       python: '3.5' # Oldest supported version according to doc/dependencies.md
       install:
         - set -o errexit; source .travis/lint_04_install.sh
-      before_script:
-        - set -o errexit; source .travis/lint_05_before_script.sh
+#      before_script:
+#        - set -o errexit; source .travis/lint_05_before_script.sh
       script:
         - set -o errexit; source .travis/lint_06_script.sh
 
